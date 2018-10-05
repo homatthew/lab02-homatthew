@@ -10,7 +10,8 @@
     <javac srcdir="src"
 	   destdir="build"
 	   includeantruntime="false"
-	   debug="true" >
+	   debug="true" 
+     debuglevel = "lines,vars,source">
       <classpath refid="project.class.path" />
     </javac>
   </target>
@@ -24,14 +25,14 @@
   </target>
 
   <target name="run" description="run the main">
-    <java classname="Rational" classpath="build"/>
+    <java classname="Polynomial" classpath="build"/>
   </target>
 
   <target name="jar" depends="compile" description="create a jar file">
-    <jar destfile="build/rational.jar">
+    <jar destfile="build/polynomial.jar">
       <fileset dir="build" includes="*.class"/>
       <manifest>
-	<attribute name="Main-Class" value="Rational"/>
+	<attribute name="Main-Class" value="Polynomial"/>
       </manifest>
     </jar>
   </target>
